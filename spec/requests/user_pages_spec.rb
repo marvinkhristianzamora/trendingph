@@ -36,13 +36,13 @@ describe "UserPages" do
       end
 
       describe "after submission" do
+        let(:user) { User.find_by(username: "test") }
         before do
           click_button "Create account"
-          let(:user) { User.find_by(username: "test") }
         end
         it { should have_link("Sign out") }
         it { should have_title("TrendingPH") }
-        it { should have_link(user.name) }
+        it { should have_link(user.username) }
       end
     end
   end
