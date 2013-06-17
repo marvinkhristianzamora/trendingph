@@ -3,8 +3,10 @@
   <div class="container">
     <%= link_to "TrendingPH", '#', id: "logo" %>
     <nav>
-    <ul class="nav pull-right">
+    <ul class="nav pull-left">
       <li><%= link_to "Submit", new_post_path %></li>
+    </ul>
+    <ul class="nav pull-right">
       <% if signed_in? %>
         <li><%= link_to current_user.username, user_path(current_user) %></li>
         <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
