@@ -1,7 +1,7 @@
 Trendingph::Application.routes.draw do
-  get "sessions/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts
 
   root to: 'static_pages#home'
 
