@@ -14,6 +14,9 @@ describe Post do
   it { should respond_to(:user) }
   it { should respond_to(:user_id) }
   its(:user) { should eq user }
+  its(:upvote) { should eq 1 }
+  its(:hit) { should eq 0 }
 
   it { should be_valid }
+
 end

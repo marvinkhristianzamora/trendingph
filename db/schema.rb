@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20130617101518) do
     t.string   "title"
     t.string   "url"
     t.string   "content"
-    t.integer  "upvote"
-    t.integer  "hit"
+    t.integer  "upvote",     default: 1
+    t.integer  "hit",        default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
