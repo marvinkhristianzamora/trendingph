@@ -1,0 +1,20 @@
+<h1>Trending PH</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <ol>
+    <% @posts.each do |post| %>
+      <li>
+      <div class="post">
+        <a><%= post.title %></a>
+        
+      </div>
+      <div>
+        <%= pluralize(post.upvote, 'point') %> - by <%= post.user.username %> <%= time_ago_in_words(post.created_at) %> ago
+      </div>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+</div>
+
