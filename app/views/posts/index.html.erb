@@ -6,11 +6,11 @@
     <% @posts.each do |post| %>
       <li>
       <div class="post">
-        <a><%= post.title %></a>
+        <%= link_to post.title, post.url, target: "_blank" %>
         
       </div>
       <div>
-        <%= pluralize(post.upvote, 'point') %> - by <%= post.user.username %> <%= time_ago_in_words(post.created_at) %> ago
+        <%= pluralize(post.upvote, 'point') %> - by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
       </div>
       </li>
     <% end %>
