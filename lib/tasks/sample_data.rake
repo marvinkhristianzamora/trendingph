@@ -28,6 +28,6 @@ def make_posts
   10.times do
     title = Faker::Lorem.sentence
     url = "http://www.google.com"
-    users.each { |user| user.posts.create!(title: title, url: url, upvote: rand(500) + 5) }
+    users.each { |user| user.posts.create!(title: title, url: url, upvote: rand(500) + 5, hit: rand(2000)) }
   end
 end

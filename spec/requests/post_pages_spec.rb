@@ -42,7 +42,6 @@ describe "PostPages" do
                                        title: "Title2", upvote: 20 ) }
       before do
         @posts = Post.all.to_a
-        puts Post.all.to_a
         visit root_path
       end
 
