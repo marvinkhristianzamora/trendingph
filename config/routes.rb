@@ -1,9 +1,9 @@
 Trendingph::Application.routes.draw do
-  get "sessions/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts
 
-  root to: 'static_pages#home'
+  root to: 'posts#index'
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

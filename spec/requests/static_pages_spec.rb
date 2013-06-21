@@ -8,6 +8,8 @@ describe "StaticPages" do
   shared_examples_for 'all static pages' do
     it { should have_content(heading) }
     it { should have_title(page_title) }
+    it { should have_link("Submit", href: new_post_path) }
+    it { should have_link("Sign in", href: signin_path) }
   end
 
   describe "Home page" do
