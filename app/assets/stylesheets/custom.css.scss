@@ -141,6 +141,37 @@ aside {
   }
 }
 
+/* posts */
+.posts {
+  margin: 15px 0 0 0;
+  list-style: none;
+
+  li {
+    overflow: auto;
+    padding: 15px 0;
+    border-top: 1px solid $grayLighter;
+  }
+
+  .points {
+    float: left;
+    padding-right: 20px;
+    height: 40px;
+  }
+
+  .title {
+    display: block;
+    a {
+      color: $gray;
+      font-size: 19px;
+      font-family: sans-serif;
+      &:hover {
+        text-decoration: none;
+        color: $grayLight;
+      }
+    }
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {

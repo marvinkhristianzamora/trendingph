@@ -1,17 +1,22 @@
 <h1>Trending PH</h1>
 
 <div class="row">
-  <div class="span6 offset3">
-    <ol>
+  <div class="span8 offset2">
+    <ol class="posts">
     <% @posts.each do |post| %>
       <li>
-      <div class="post">
-        <%= link_to post.title, post.url, target: "_blank" %>
-        
-      </div>
-      <div>
-        <%= pluralize(post.upvote, 'point') %> - by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
-      </div>
+        <div class="points">
+          <a href="#" class="btn btn-inverse btn-small">
+            <i class="fam-arrow-up"></i>
+            <%= post.upvote %>
+         </a>
+        </div>
+        <div class="post">
+          <span class="title"><%= link_to post.title, post.url, target: "_blank" %></span>
+          <span>
+            by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
+          </span>
+       </div>
       </li>
     <% end %>
     </ol>
