@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
+  has_many :votes
+
+  after_save :add_author_vote
+
   validates :user_id, presence: true
   validates :url, presence: true
   validates :title, presence: true
@@ -18,4 +22,9 @@ class Post < ActiveRecord::Base
 
     order("#{score_query} DESC")
   end
+
+  private
+    def add_author_vote
+      self.votes.create(user: self.user)
+    end
 end
