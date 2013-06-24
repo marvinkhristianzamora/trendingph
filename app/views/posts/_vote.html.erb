@@ -1,4 +1,7 @@
-<a href="#" class="btn btn-inverse btn-small">
-  <i class="fam-arrow-up"></i>
-  <%= post.upvote %>
-</a>
+<%= form_for(post.votes.build(post_id: post.id), remote:true) do |f| %>
+  <div><%= f.hidden_field :post_id %></div>
+  <%= button_tag(type: 'submit', class: "btn btn-inverse btn-small") do %>
+    <i class="fam-arrow-up"></i>
+    <%= post.upvote %>
+  <% end %>
+<% end %>
