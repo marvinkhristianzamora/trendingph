@@ -14,6 +14,11 @@ class Post < ActiveRecord::Base
     self.votes.find_by(user_id: user.id)
   end
 
+  def vote_from!(user)
+    self.votes.create!(user_id: user.id)
+    self.increment!(:upvote)
+  end
+
   def self.list
     if Rails.env.production?
       time = "(EXTRACT(EPOCH FROM CURRENT_TIMESTAMP - created_at)/3600)"
