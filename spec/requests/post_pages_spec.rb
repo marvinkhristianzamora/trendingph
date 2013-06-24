@@ -37,9 +37,9 @@ describe "PostPages" do
 
     describe "list" do
       let!(:post1) { FactoryGirl.create(:post, user: user, url: "http://url1.com",
-                                       title: "Title1", upvote: 10 ) }
+                                        title: "Title1", upvote: 10 ) }
       let!(:post2) { FactoryGirl.create(:post, user: user, url: "http://url2.com",
-                                       title: "Title2", upvote: 20 ) }
+                                        title: "Title2", upvote: 20 ) }
       before do
         @posts = Post.all.to_a
         visit root_path
@@ -51,6 +51,13 @@ describe "PostPages" do
           expect(page).to have_link(post.user.username, href: user_path(post.user))
           expect(page).to have_content(post.upvote)
         end
+      end
+
+      describe "for signed-out users trying to vote" do
+        before { click_link post1.upvote }
+        it "should redirect to sign in page" do
+          expect(page).to have_title("Sign in")
+        end 
       end
     end
   end
