@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if params[:voter]
+      flash.now[:notice] = "Please sign in before you vote."
+    end
   end
 
   def create
