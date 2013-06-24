@@ -6,10 +6,7 @@
     <% @posts.each do |post| %>
       <li>
         <div class="points">
-          <a href="#" class="btn btn-inverse btn-small">
-            <i class="fam-arrow-up"></i>
-            <%= post.upvote %>
-         </a>
+          <%= render 'vote_form', post: post %>
         </div>
         <div class="post">
           <span class="title"><%= link_to post.title, post.url, target: "_blank" %></span>
@@ -22,4 +19,3 @@
     </ol>
   </div>
 </div>
-

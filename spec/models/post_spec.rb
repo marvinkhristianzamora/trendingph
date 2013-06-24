@@ -19,10 +19,11 @@ describe Post do
 
   it { should be_valid }
 
-  describe "author vote after save" do
+  describe "author vote after create" do
     before { @post.save }
     let(:vote) { Vote.find_by(post_id: @post.id) }
 
+    it { should be_voted_by(user) }
     it { should eq vote.post } 
     its(:user) { vote.user }
   end
