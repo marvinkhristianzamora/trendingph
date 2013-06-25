@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :signed_in_user, only: [:new, :create]
 
   def index
-    @posts = Post.list
+    @posts = Post.list.paginate(page: params[:page], per_page: 10)
   end
 
   def new

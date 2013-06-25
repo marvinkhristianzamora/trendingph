@@ -3,19 +3,8 @@
 <div class="row">
   <div class="span8 offset2">
     <ol class="posts">
-    <% @posts.each do |post| %>
-      <li>
-        <div class="points">
-          <%= render 'vote_form', post: post %>
-        </div>
-        <div class="post">
-          <span class="title"><%= link_to post.title, post.url, target: "_blank" %></span>
-          <span>
-            by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
-          </span>
-       </div>
-      </li>
-    <% end %>
+    <%= render @posts %>
     </ol>
+    <%= will_paginate @posts %>
   </div>
 </div>
