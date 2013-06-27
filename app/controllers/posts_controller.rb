@@ -20,7 +20,7 @@ class PostsController < ApplicationController
           flash[:success] = "Posted!"
           redirect_to root_path
         end
-        format.json { render json: @post, status: :created, locationasdft }
+        format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render 'new' }
       end
