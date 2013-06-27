@@ -9,3 +9,9 @@ jQuery ->
         $('.pagination').text("Loading more entries...")
         $.getScript(url)
     $(window).scroll()
+
+$ ()->
+  $("form.new_post").on "ajax:success", (event, data, status, xhr) ->
+    $('#submit-modal').modal('hide')
+
+
