@@ -4,7 +4,11 @@
     <%= link_to "TrendingPH", root_path, id: "logo" %>
     <nav>
     <ul class="nav pull-left">
-      <li><%= link_to "Submit", new_post_path %></li>
+      <% if signed_in? %>
+        <li><a href="#submit-modal" role="button" data-toggle="modal" >Submit</a></li>
+      <% else %>
+        <li><%= link_to "Submit", new_post_path %></li>
+      <% end %>
     </ul>
     <ul class="nav pull-right">
       <% if signed_in? %>
