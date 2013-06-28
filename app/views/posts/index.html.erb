@@ -1,22 +1,4 @@
-<!-- Submit Modal -->
-<% if signed_in? %>
-  <div id="submit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="submit-modal-label" aria-hidden="true">
-    <%= form_for(@post, remote: true, html: { "data-type" => :json }) do |f| %>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="submit-modal-label">New Post</h3>
-      </div>
-      <div class="modal-body">
-        <p>Enter a url of a news article, video, blog, gif, facebook post, or basically anything you want to trend.</p>
-        <%= render 'fields', f: f %>
-      </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<%= render 'submit_modal' %>
 
 <div class="row">
   <div class="span10 offset1">
