@@ -8,8 +8,6 @@
     padding: 11px;
     text-align: center;
     display: inline-block;
-    margin-top: 5px;
-    margin-bottom: 18px;
     margin-right: 0px;
     margin-left: 0px;
     text-decoration: none;
@@ -42,6 +40,18 @@
     -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
     box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
 }
+
+.button-narrow {
+  @extend .button-small;
+  min-width: 15px;
+  margin: 0;
+}
+
+.anchor-button-narrow {
+  @extend .button-narrow;
+  min-width: 13px;
+}
+
 .anchor-button-small {
     @extend .button-small;
     min-width: 44px;
@@ -138,4 +148,8 @@
 
 .asbestos {
     background: #7F8C8D;
+}
+
+.concrete {
+    background: #95A5A6;
 }

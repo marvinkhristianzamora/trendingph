@@ -155,7 +155,7 @@ aside {
   .points {
     float: left;
     padding-right: 20px;
-    height: 40px;
+    margin-top: 4px;
   }
 
   .title {
@@ -173,6 +173,11 @@ aside {
 }
 
 /* forms */
+
+.new_vote {
+  margin: 0;
+  padding: 0;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
