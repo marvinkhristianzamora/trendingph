@@ -1,4 +1,7 @@
-<a href="<%= signin_path %>?voter=true" class="anchor-button-small alizarin rounded1">
-  <i class="icon-2x icon-circle-arrow-up"></i>
-  <%= post.upvote %>
-</a>
+<div class="btn-group">
+  <a href="<%= signin_path %>?voter=true" class="anchor-button-small alizarin rounded1">
+    <i class="icon-2x icon-circle-arrow-up"></i>
+    <%= post.upvote %>
+  </a>
+  <a class="anchor-button-narrow concrete rounded1" href="#"><i class="icon-comments icon-large"></i></a>
+</div>
