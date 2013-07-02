@@ -68,13 +68,12 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: #000;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  margin-left: 19px;
+  margin-left: 15px;
   line-height: 1;
   &:hover {
     color: #222;
@@ -148,31 +147,38 @@ aside {
 
 /* posts */
 .posts {
-  margin: 15px 0 0 0;
+  margin: 13px 0 0 0;
   list-style: none;
 
   li {
     overflow: auto;
-    padding: 15px 0;
+    padding: 12px 0;
     border-top: 1px solid $grayLighter;
   }
 
   .points {
     float: left;
-    padding-right: 20px;
+    padding-right: 15px;
     margin-top: 4px;
   }
 
   .title {
     display: block;
     a {
-      color: $gray;
-      font-size: 19px;
+      font-size: 16px;
       font-family: sans-serif;
+      color: #000;
       &:hover {
         text-decoration: none;
         color: $grayLight;
       }
+    }
+  }
+
+  .details {
+    font-size: 12px;
+    a {
+      color: #7F8C8D;
     }
   }
 }
