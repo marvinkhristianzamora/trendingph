@@ -11,8 +11,8 @@
     margin-right: 0px;
     margin-left: 0px;
     text-decoration: none;
-    min-width: 62px;
 }
+
 .button-small:visited{
     color: #fff;
 }
@@ -45,6 +45,11 @@
   @extend .button-small;
   min-width: 15px;
   margin: 0;
+}
+
+.anchor-button-medium {
+  @extend .button-small;
+  min-width: 75px;
 }
 
 .anchor-button-narrow {
