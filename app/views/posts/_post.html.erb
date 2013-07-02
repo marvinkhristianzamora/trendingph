@@ -4,8 +4,8 @@
   </div>
   <div class="post">
     <span class="title"><%= link_to post.title, post.url, target: "_blank" %></span>
-    <span>
-        by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
+    <span class="details">
+      by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago - <%= URI.parse(post.url).host %>
     </span>
   </div>
 </li>
