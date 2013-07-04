@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+$peterRiver: #3498DB;
+$sunFlower: #F1C40F;
+$alizarin: #E74C3C;
+$concrete: #95A5A6;
+$emerald: #2ECC71;
+$asbestos: #7F8C8D;
+$silver: #BDC3C7;
+
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
@@ -15,6 +23,7 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   padding-top: 15px;
 }
 
@@ -120,31 +129,6 @@ footer {
   @include box_sizing;
 }
 
-/* sidebar */
-
-aside {
-  section {
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
-
 /* posts */
 .posts {
   margin: 13px 0 0 0;
@@ -166,7 +150,6 @@ aside {
     display: block;
     a {
       font-size: 16px;
-      font-family: sans-serif;
       color: #000;
       &:hover {
         text-decoration: none;
@@ -178,16 +161,35 @@ aside {
   .details {
     font-size: 12px;
     a {
-      color: #7F8C8D;
+      color: $asbestos;
     }
 
     span {
-      color: #BDC3C7;
+      color: $silver;
     }
   }
 }
 
 /* forms */
+
+.short-alert {
+  color: #FFF;
+  padding: 3px;
+  font-size: 13px;
+  background: $concrete;
+}
+
+.short-alert-notice {
+  background: $sunFlower;
+}
+
+.short-alert-success {
+  background: $emerald;
+}
+
+.short-alert-error {
+  background: $alizarin;
+}
 
 .new_vote {
   margin: 0;
