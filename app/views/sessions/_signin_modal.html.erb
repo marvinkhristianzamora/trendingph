@@ -1,0 +1,17 @@
+<% if !signed_in? %>
+  <div id="signin-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signin-modal-label" aria-hidden="true">
+    <%= form_for(:session, url: sessions_path, remote: true, html: { "data-type" => :json }) do |f| %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="signin-modal-label">Sign in</h3>
+      </div>
+      <div class="modal-body">
+        <%= render 'sessions/fields', f: f %>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= f.submit "Sign in", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

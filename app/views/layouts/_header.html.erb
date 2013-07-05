@@ -4,13 +4,13 @@
       <div class="pull-left">
         <% if signed_in? %>
           <a href="#submit-modal" role="button" data-toggle="modal"  class="left anchor-button-medium pomegranate rounded1">
-          <i class="icon-2x icon-cloud-upload"></i>
+            <i class="icon-2x icon-cloud-upload"></i>
             SUBMIT
           </a>
         <% else %>
           <%= link_to new_post_path, class: "left anchor-button-medium pomegranate rounded1" do %>
             <i class="icon-2x icon-cloud-upload"></i>
-              SUBMIT
+            SUBMIT
           <% end %>
         <% end %>
         <%= link_to "newsmakerPH", root_path, id: "logo" %>
@@ -28,9 +28,9 @@
               <i class="icon-large icon-signout"></i>
             <% end %>
           <% else %>
-            <%= link_to signin_path, class: "anchor-button-narrow concrete rounded1" do %>
+            <a href="#signin-modal" role="button" data-toggle="modal"  class="left anchor-button-narrow concrete rounded1">
               <i class="icon-large icon-signin"></i>
-            <% end %>
+            </a>
           <% end %>
         </div>
       </div>
