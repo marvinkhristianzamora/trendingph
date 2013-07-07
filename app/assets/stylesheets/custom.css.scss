@@ -191,11 +191,6 @@ footer {
   background: $alizarin;
 }
 
-.new_vote {
-  margin: 0;
-  padding: 0;
-}
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -221,7 +216,7 @@ input {
   @extend .error;
 }
 
-.new_post {
+form {
   margin: 0;
   padding: 0;
 }
