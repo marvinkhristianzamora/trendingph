@@ -3,7 +3,7 @@
   <div class="btn-group">
     <%= button_tag(type: 'submit', class: "button-small alizarin rounded1") do %>
       <i class="icon-2x icon-circle-arrow-up"></i>
-      <%= post.upvote %>
+      <span><%= post.upvote %></span>
     <% end %>
     <%= button_tag(disabled: true, class: "button-narrow concrete rounded1") do %>
       <i class="icon-large icon-comments"></i>
