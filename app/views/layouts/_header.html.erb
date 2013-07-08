@@ -13,7 +13,7 @@
             <span>SUBMIT</span>
           </a>
         <% end %>
-        <%= link_to "newsmakerPH", root_path, id: "logo" %>
+        <%= link_to "newsmakersPH", root_path, id: "logo" %>
       </div>
       <% flash.each do |key, value| %>
         <%= content_tag(:span, value, class: "offset1 short-alert short-alert-#{key}") %>
@@ -21,14 +21,14 @@
       <div class="pull-right">
         <div class="btn-group">
           <% if signed_in? %>
-            <%= link_to user_path(current_user), class: "anchor-button-narrow asbestos rounded1" do %>
+            <%= link_to user_path(current_user), class: "anchor-button-narrow asbestos rounded1", title: "Profile"  do %>
               <i class="icon-large icon-user"></i>
             <% end %>
-            <%= link_to signout_path, method: "delete", class: "anchor-button-narrow concrete rounded1" do %>
+            <%= link_to signout_path, method: "delete", class: "anchor-button-narrow concrete rounded1", title: "Sign out" do %>
               <i class="icon-large icon-signout"></i>
             <% end %>
           <% else %>
-            <a href="#signin-modal" role="button" data-toggle="modal" class="left anchor-button-narrow concrete rounded1">
+            <a href="#signin-modal" role="button" data-toggle="modal" title="Sign in" class="left anchor-button-narrow concrete rounded1">
               <i class="icon-large icon-signin"></i>
             </a>
           <% end %>

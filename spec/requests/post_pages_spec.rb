@@ -53,12 +53,6 @@ describe "PostPages" do
         end
       end
 
-      describe "for signed-out users trying to vote" do
-        before { click_link post1.upvote }
-        it "should redirect to sign in page" do
-          expect(page).to have_title("Sign in")
-        end 
-      end
     end
   end
 end
