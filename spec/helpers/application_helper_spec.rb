@@ -8,7 +8,7 @@ describe ApplicationHelper do
     end
 
     it "should include the base title" do
-      expect(full_title("foo")).to match(/^TrendingPH/)
+      expect(full_title("foo")).to match(/^newsmakersPH/)
     end
 
     it "should not include pipe for empty title" do

@@ -37,9 +37,9 @@ describe "PostPages" do
 
     describe "list" do
       let!(:post1) { FactoryGirl.create(:post, user: user, url: "http://url1.com",
-                                       title: "Title1", upvote: 10 ) }
+                                        title: "Title1", upvote: 10 ) }
       let!(:post2) { FactoryGirl.create(:post, user: user, url: "http://url2.com",
-                                       title: "Title2", upvote: 20 ) }
+                                        title: "Title2", upvote: 20 ) }
       before do
         @posts = Post.all.to_a
         visit root_path
@@ -52,6 +52,7 @@ describe "PostPages" do
           expect(page).to have_content(post.upvote)
         end
       end
+
     end
   end
 end

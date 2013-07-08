@@ -1,0 +1,9 @@
+<div id="vote_form_<%= post.id %>">
+  <% if signed_in? && post.voted_by?(current_user) %>
+    <%= render 'voted', post: post %>
+  <% elsif signed_in? %>
+    <%= render 'vote', post: post %>
+  <% else %>
+    <%= render 'signin', post: post %>
+  <% end %>
+</div>

@@ -1,20 +1,39 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-<div class="navbar-inner">
-  <div class="container">
-    <%= link_to "TrendingPH", root_path, id: "logo" %>
-    <nav>
-    <ul class="nav pull-left">
-      <li><%= link_to "Submit", new_post_path %></li>
-    </ul>
-    <ul class="nav pull-right">
-      <% if signed_in? %>
-        <li><%= link_to current_user.username, user_path(current_user) %></li>
-        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-      <% else %>
-        <li><%= link_to "Sign in", signin_path %></li>
+<div class="container">
+  <div class="row">
+    <div class="span10 offset1">
+      <div class="pull-left">
+        <% if signed_in? %>
+          <a href="#submit-modal" role="button" data-toggle="modal" class="left anchor-button-medium pomegranate rounded1">
+            <i class="icon-2x icon-cloud-upload"></i>
+            <span>SUBMIT</span>
+          </a>
+        <% else %>
+          <a href="#signin-modal" role="button" data-toggle="modal" class="left anchor-button-medium pomegranate rounded1">
+            <i class="icon-2x icon-cloud-upload"></i>
+            <span>SUBMIT</span>
+          </a>
+        <% end %>
+        <%= link_to "newsmakersPH", root_path, id: "logo" %>
+      </div>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:span, value, class: "offset1 short-alert short-alert-#{key}") %>
       <% end %>
-    </ul>
-    </nav>
+      <div class="pull-right">
+        <div class="btn-group">
+          <% if signed_in? %>
+            <%= link_to user_path(current_user), class: "anchor-button-narrow asbestos rounded1", title: "Profile"  do %>
+              <i class="icon-large icon-user"></i>
+            <% end %>
+            <%= link_to signout_path, method: "delete", class: "anchor-button-narrow concrete rounded1", title: "Sign out" do %>
+              <i class="icon-large icon-signout"></i>
+            <% end %>
+          <% else %>
+            <a href="#signin-modal" role="button" data-toggle="modal" title="Sign in" class="left anchor-button-narrow concrete rounded1">
+              <i class="icon-large icon-signin"></i>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</header>

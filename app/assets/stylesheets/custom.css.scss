@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+$peterRiver: #3498DB;
+$sunFlower: #F1C40F;
+$alizarin: #E74C3C;
+$concrete: #95A5A6;
+$emerald: #2ECC71;
+$asbestos: #7F8C8D;
+$silver: #BDC3C7;
+
 /* mixins, variables, etc. */
 
 @mixin box_sizing {
@@ -15,7 +23,8 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 15px;
 }
 
 section {
@@ -31,6 +40,10 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.left {
+  float: left;
 }
 
 /* typography */
@@ -64,15 +77,15 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #000;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  margin-left: 15px;
   line-height: 1;
   &:hover {
-    color: #fff;
+    color: #222;
     text-decoration: none;
   }
 }
@@ -116,32 +129,67 @@ footer {
   @include box_sizing;
 }
 
-/* sidebar */
+/* posts */
+.posts {
+  margin: 13px 0 0 0;
+  list-style: none;
 
-aside {
-  section {
-    padding: 10px 0;
+  li {
+    overflow: auto;
+    padding: 12px 0;
     border-top: 1px solid $grayLighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
+  }
+
+  .points {
+    float: left;
+    padding-right: 15px;
+    margin-top: 4px;
+  }
+
+  .title {
+    display: block;
+    a {
+      font-size: 16px;
+      color: #000;
+      &:hover {
+        text-decoration: none;
+        color: $grayLight;
+      }
     }
+  }
+
+  .details {
+    font-size: 12px;
+    a {
+      color: $asbestos;
+    }
+
     span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
+      color: $silver;
     }
   }
 }
 
 /* forms */
+
+.short-alert {
+  color: #FFF;
+  padding: 3px;
+  font-size: 13px;
+  background: $concrete;
+}
+
+.short-alert-notice {
+  background: $sunFlower;
+}
+
+.short-alert-success {
+  background: $emerald;
+}
+
+.short-alert-error {
+  background: $alizarin;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -158,14 +206,19 @@ input {
 #error_explanation {
   color: #f00;
   ul {
-      list-style: none;
-      margin: 0 0 18px 0;
+    list-style: none;
+    margin: 0 0 18px 0;
   }
 }
 
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+form {
+  margin: 0;
+  padding: 0;
 }
 
 /* Users index */
@@ -180,5 +233,12 @@ input {
     &:last-child {
       border-bottom: 1px solid $grayLighter;
     }
+  }
+}
+
+/* Pagination */
+.pagination {
+  a, span, em {
+    visibility: hidden;
   }
 }

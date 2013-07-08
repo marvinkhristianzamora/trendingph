@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130617101518) do
+ActiveRecord::Schema.define(version: 20130622121709) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -38,5 +38,16 @@ ActiveRecord::Schema.define(version: 20130617101518) do
   end
 
   add_index "users", ["username", "remember_token"], name: "index_users_on_username_and_remember_token"
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["post_id"], name: "index_votes_on_post_id"
+  add_index "votes", ["user_id", "post_id"], name: "index_votes_on_user_id_and_post_id", unique: true
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

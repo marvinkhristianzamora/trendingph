@@ -1,0 +1,12 @@
+<%= form_for(post.votes.build(post_id: post.id), remote:true) do |f| %>
+  <div><%= f.hidden_field :post_id %></div>
+  <div class="btn-group">
+    <%= button_tag(type: 'submit', class: "button-small alizarin rounded1") do %>
+      <i class="icon-2x icon-circle-arrow-up"></i>
+      <span><%= post.upvote %></span>
+    <% end %>
+    <%= button_tag(disabled: true, class: "button-narrow concrete rounded1") do %>
+      <i class="icon-large icon-comments"></i>
+    <% end %>
+  </div>
+<% end %>

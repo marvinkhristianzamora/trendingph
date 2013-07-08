@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :votes
 
   before_save :create_remember_token
   before_save { self.email.downcase! }

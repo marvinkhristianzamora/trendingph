@@ -12,7 +12,7 @@ def make_users
                password: "password",
                password_confirmation: "password",
                admin: true)
-  99.times do |n|
+  50.times do |n|
     username = Faker::Internet.user_name
     email = "sample-#{n+1}@email.com"
     password = "password"
@@ -28,6 +28,6 @@ def make_posts
   10.times do
     title = Faker::Lorem.sentence
     url = "http://www.google.com"
-    users.each { |user| user.posts.create!(title: title, url: url, upvote: rand(500) + 5, hit: rand(2000)) }
+    users.each { |user| user.posts.create!(title: title, url: url, upvote: rand(9994) + 5, hit: rand(2000)) }
   end
 end

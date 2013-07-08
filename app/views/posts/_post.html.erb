@@ -1,0 +1,11 @@
+<li>
+  <div class="points">
+    <%= render 'vote_form', post: post %>
+  </div>
+  <div class="post">
+    <span class="title"><%= link_to post.title, post.url, target: "_blank" %></span>
+    <span class="details">
+      by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago <span class="pull-right"><%= URI.parse(post.url).host %></span>
+    </span>
+  </div>
+</li>

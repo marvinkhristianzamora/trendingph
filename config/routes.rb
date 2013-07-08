@@ -2,6 +2,7 @@ Trendingph::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :posts
+  resources :votes, only: [:create]
 
   root to: 'posts#index'
 

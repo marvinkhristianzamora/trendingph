@@ -1,20 +1,11 @@
-<h1>Trending PH</h1>
+<%= render 'submit_modal' %>
+<%= render 'sessions/signin_modal' %>
 
 <div class="row">
-  <div class="span6 offset3">
-    <ol>
-    <% @posts.each do |post| %>
-      <li>
-      <div class="post">
-        <%= link_to post.title, post.url, target: "_blank" %>
-        
-      </div>
-      <div>
-        <%= pluralize(post.upvote, 'point') %> - by <%= link_to post.user.username, post.user %> <%= time_ago_in_words(post.created_at) %> ago
-      </div>
-      </li>
-    <% end %>
+  <div class="span10 offset1">
+    <ol id="posts" class="posts">
+      <%= render @posts %>
     </ol>
+    <%= will_paginate @posts %>
   </div>
 </div>
-

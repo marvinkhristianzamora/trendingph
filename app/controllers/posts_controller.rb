@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   before_action :signed_in_user, only: [:new, :create]
 
   def index
-    @posts = Post.list
+    if signed_in?
+      @post = current_user.posts.build
+    end
+    @posts = Post.list.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -11,11 +14,16 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save
-      flash[:success] = "Posted!"
-      redirect_to root_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @post.save
+        format.html do
+          flash[:success] = "Posted!"
+          redirect_to root_path
+        end
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        format.html { render 'new' }
+      end
     end
   end
 
