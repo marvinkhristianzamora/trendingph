@@ -5,12 +5,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to Trending PH!"
-      redirect_to root_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to newmakersPH!"
+        format.html { redirect_to root_path }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render 'new' }
+      end
     end
   end
 
@@ -19,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   private
-    
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    end
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
 end

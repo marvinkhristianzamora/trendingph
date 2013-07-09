@@ -7,3 +7,9 @@ $ ()->
     $("form.new_session")[0].reset()                                                                     
     $('#signin-modal').modal('hide')
     window.location.reload()
+
+$ ()->                                                                                                
+  $("form.new_user").on "ajax:success", (event, data, status, xhr) ->                                 
+    $("form.new_user")[0].reset()                                                                     
+    $('#signup-modal').modal('hide')
+    window.location.reload()
