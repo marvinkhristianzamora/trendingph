@@ -114,7 +114,6 @@ footer {
     list-style: none;
     li {
       float: left;
-      margin-left: 10px;
     }
   }
 }
@@ -136,8 +135,12 @@ footer {
 
   li {
     overflow: auto;
-    padding: 12px 0;
+    padding: 11px 0;
     border-top: 1px solid $grayLighter;
+  }
+
+  .post {
+    margin-top: 3px;
   }
 
   .points {
@@ -149,8 +152,10 @@ footer {
   .title {
     display: block;
     a {
+      font-family: 'Segoe UI', 'Open Sans', sans-serif;
       font-size: 16px;
       color: #000;
+      font-weight: bold;
       &:hover {
         text-decoration: none;
         color: $grayLight;
