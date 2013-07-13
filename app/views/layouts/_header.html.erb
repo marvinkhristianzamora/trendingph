@@ -15,6 +15,7 @@
         <% end %>
         <%= link_to "newsmakersPH", root_path, id: "logo" %>
       </div>
+      <span id="flash-holder"></span>
       <% flash.each do |key, value| %>
         <%= content_tag(:span, value, class: "offset1 short-alert short-alert-#{key}") %>
       <% end %>
@@ -28,6 +29,9 @@
               <i class="icon-large icon-signout"></i>
             <% end %>
           <% else %>
+            <a href="#signup-modal" role="button" data-toggle="modal" title="Sign up" class="left anchor-button-narrow asbestos rounded1">
+              Sign up!
+            </a>
             <a href="#signin-modal" role="button" data-toggle="modal" title="Sign in" class="left anchor-button-narrow concrete rounded1">
               <i class="icon-large icon-signin"></i>
             </a>

@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def index
     if signed_in?
       @post = current_user.posts.build
+    elsif
+      @user = User.new
     end
     @posts = Post.list.paginate(page: params[:page], per_page: 10)
   end

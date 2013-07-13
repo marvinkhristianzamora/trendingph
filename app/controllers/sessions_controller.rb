@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if user && user.authenticate(params[:session][:password])
         sign_in user
-        format.html { redirect_back_or root_path }
+        flash[:success] = "Hey you, welcome back!"
+        format.html do
+          redirect_back_or root_path
+        end
+
         format.json { render json: user, status: :created, location: user }
       else
         format.html do 

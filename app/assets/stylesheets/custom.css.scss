@@ -78,7 +78,7 @@ p {
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #000;
+  color: $asbestos;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -114,7 +114,6 @@ footer {
     list-style: none;
     li {
       float: left;
-      margin-left: 10px;
     }
   }
 }
@@ -136,8 +135,12 @@ footer {
 
   li {
     overflow: auto;
-    padding: 12px 0;
+    padding: 11px 0;
     border-top: 1px solid $grayLighter;
+  }
+
+  .post {
+    margin-top: 3px;
   }
 
   .points {
@@ -149,7 +152,8 @@ footer {
   .title {
     display: block;
     a {
-      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
       color: #000;
       &:hover {
         text-decoration: none;
