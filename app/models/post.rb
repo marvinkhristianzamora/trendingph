@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
       time = "((strftime('%s', current_timestamp) - strftime('%s', created_at))/3600)"
       denom = "(#{time}+2)*(#{time}*(#{GRAVITY}-1))"
     end
-    score_query = "(upvote -1 + hit*.5)/(#{denom})"
+    score_query = "(upvote -1)/(#{denom})"
 
     order("#{score_query} DESC")
   end
