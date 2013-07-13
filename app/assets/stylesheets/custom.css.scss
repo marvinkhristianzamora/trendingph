@@ -78,7 +78,7 @@ p {
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #000;
+  color: $asbestos;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -152,10 +152,9 @@ footer {
   .title {
     display: block;
     a {
-      font-family: 'Segoe UI', 'Open Sans', sans-serif;
-      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
       color: #000;
-      font-weight: bold;
       &:hover {
         text-decoration: none;
         color: $grayLight;
