@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
-  let(:title) { 'Trending PH' }
+  let(:title) { 'newsmakersPH' }
   subject { page }
 
   shared_examples_for 'all static pages' do
