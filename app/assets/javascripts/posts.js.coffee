@@ -14,6 +14,4 @@ $ ()->
   $("form.new_post").on "ajax:success", (event, data, status, xhr) ->
     $("form.new_post")[0].reset()
     $('#submit-modal').modal('hide')
-    $('#flash-holder').attr('class', 'alert alert-success').text("Posted!").fadeIn(1000).fadeOut(2000)
-
-
+    $('#flash-holder').attr('class', 'offset1 short-alert short-alert-success').text("Posted!").fadeIn(1000).fadeOut(3000)
