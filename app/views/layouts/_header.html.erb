@@ -15,10 +15,11 @@
         <% end %>
         <%= link_to "newsmakersPH", root_path, id: "logo" %>
       </div>
-      <span id="flash-holder"></span>
-      <% flash.each do |key, value| %>
-        <%= content_tag(:span, value, class: "offset1 short-alert short-alert-#{key}") %>
-      <% end %>
+      <span id="flash-holder">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:span, value, class: "offset1 short-alert short-alert-#{key}") %>
+        <% end %>
+      </span>
       <div class="pull-right">
         <div class="btn-group">
           <% if signed_in? %>
