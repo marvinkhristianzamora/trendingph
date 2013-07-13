@@ -1,0 +1,15 @@
+<% if signed_in? %>
+  <%= link_to user_path(current_user), class: "anchor-button-narrow asbestos rounded1", title: "Profile"  do %>
+    <i class="icon-large icon-user"></i>
+  <% end %>
+  <%= link_to signout_path, method: "delete", class: "anchor-button-narrow concrete rounded1", title: "Sign out" do %>
+    <i class="icon-large icon-signout"></i>
+  <% end %>
+<% else %>
+  <a href="#signup-modal" role="button" data-toggle="modal" title="Sign up" class="left anchor-button-narrow asbestos rounded1">
+    Sign up!
+  </a>
+  <a href="#signin-modal" role="button" data-toggle="modal" title="Sign in" class="left anchor-button-narrow concrete rounded1">
+    <i class="icon-large icon-signin"></i>
+  </a>
+<% end %>
