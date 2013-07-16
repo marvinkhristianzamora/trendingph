@@ -246,3 +246,24 @@ form {
     visibility: hidden;
   }
 }
+
+/* Modal */
+
+.modal-header {
+  text-align: center;
+  vertial-align: middle;
+  overflow: hidden;
+}
+
+.modal-label {
+  margin: auto;
+  text-align: left;
+  float: left;
+}
+
+.modal-message {
+  display:none;
+  margin: auto;
+  text-align: center;
+  line-height: 30px;
+}
