@@ -15,9 +15,11 @@ class SessionsController < ApplicationController
           redirect_back_or root_path
         end
 
-        format.json { render json: user, status: :created, location: user }
+        format.json { render json: { success: true }, status: :created, location: user }
       else
-        format.html do 
+        format.json { render json: { success: false, error_message: "Invalid email/password combo!" },
+          status: :created, location: user }
+        format.html do
           flash.now[:error] = "Invalid email/password combo!"
           render 'new'
         end
