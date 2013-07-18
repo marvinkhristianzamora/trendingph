@@ -249,6 +249,12 @@ form {
 
 /* Modal */
 
+.modal {
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+
 .modal-header {
   text-align: center;
   vertial-align: middle;

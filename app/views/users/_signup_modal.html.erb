@@ -3,15 +3,15 @@
     <%= form_for(@user, remote: true, html: { "data-type" => :json }) do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="signup-modal-label">Sign up</h3>
+        <h3 id="signup-modal-label" class="modal-label">Sign up</h3>
       </div>
       <div class="modal-body">
         <p>Be a newsmaker.</p>
         <%= render 'users/fields', f: f %>
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <%= f.submit "Sign up", class: "btn btn-primary" %>
+        <button class="anchor-button-medium concrete rounded1" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= f.submit "Sign up", class: "anchor-button-medium alizarin rounded1", id: "signup-btn" %>
       </div>
     <% end %>
   </div>
