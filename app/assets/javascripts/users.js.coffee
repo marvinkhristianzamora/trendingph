@@ -23,3 +23,9 @@ $ ()->
      $("form.new_user")[0].reset()
      $('#signup-modal').modal('hide')
      window.location.reload()
+
+$ ()->
+  $("form.new_user").on "ajax:beforeSend", (event, xhr, settings) ->
+    $("#signup-btn").attr('value', 'Signing up...')
+    $("#signup-errors").text("")
+    $("#signup-errors").hide()

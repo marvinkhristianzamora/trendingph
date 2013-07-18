@@ -15,3 +15,9 @@ $ ()->
     $("form.new_post")[0].reset()
     $('#submit-modal').modal('hide')
     $('#flash-holder').attr('class', 'offset1 short-alert short-alert-success').text("Posted!").fadeIn(1000).fadeOut(3000)
+
+$ ()->
+  $("form.new_post").on "ajax:beforeSend", (event, xhr, settings) ->
+    $("#submit-btn").attr('value', 'Submitting..')
+    $("#submit-errors").text("")
+    $("#submit-errors").hide()
