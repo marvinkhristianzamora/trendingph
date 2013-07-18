@@ -14,6 +14,7 @@ $ ()->
 
 $ ()->
   $("form.new_session").on "ajax:beforeSend", (event, xhr, settings) ->
+    $("#signin-btn").attr('value', 'Signing in...')
     $("#signin-errors").text("")
     $("#signin-errors").hide()
 
