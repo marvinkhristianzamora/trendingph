@@ -4,15 +4,15 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="signin-modal-label" class="modal-label">Sign in</h3>
-        <span id="signin-errors" class="modal-message short-alert short-alert-error"></span>
       </div>
       <div class="modal-body">
-        <p>First things first.</p>
+        <div id="signin-errors" class="modal-errors"></div>
+        <p>First things first. No account? <a href="#signup-modal" role="button" data-dismiss="modal" data-toggle="modal">Sign up!</a></p>
         <%= render 'sessions/fields', f: f %>
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <%= f.submit "Sign in", class: "btn btn-primary" %>
+        <button class="anchor-button-medium concrete rounded1" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= f.submit "Sign in", class: "anchor-button-medium alizarin rounded1", id: "signin-btn" %>
       </div>
     <% end %>
   </div>
