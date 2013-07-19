@@ -10,7 +10,7 @@ $ ()->
       window.location.reload()
     else
       $("#signin-btn").attr('value', 'Sign in')
-      $("#signin-errors").text(data.error_message)
+      $("#signin-errors").append('<span>' + data.error_message + '</span>')
       $("#signin-errors").show()
 
 $ ()->
