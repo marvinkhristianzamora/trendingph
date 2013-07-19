@@ -2,7 +2,7 @@
   <div id="signup-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signup-modal-label" aria-hidden="true">
     <%= form_for(@user, remote: true, html: { "data-type" => :json }) do |f| %>
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <a class="close" data-dismiss="modal" aria-hidden="true">×</a>
         <h3 id="signup-modal-label" class="modal-label">Sign up</h3>
       </div>
       <div class="modal-body">
@@ -11,7 +11,7 @@
         <%= render 'users/fields', f: f %>
       </div>
       <div class="modal-footer">
-        <button class="anchor-button-medium concrete rounded1" data-dismiss="modal" aria-hidden="true">Close</button>
+        <a class="anchor-button-medium anchor-fix concrete rounded1" data-dismiss="modal" aria-hidden="true">Close</a>
         <%= f.submit "Sign up", class: "anchor-button-medium alizarin rounded1", id: "signup-btn" %>
       </div>
     <% end %>
