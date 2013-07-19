@@ -261,6 +261,17 @@ form {
   overflow: hidden;
 }
 
+.modal-body {
+  display: block;
+  padding: 10px 15px;
+}
+
+.modal-errors span {
+  @extend .modal-message;
+  @extend .short-alert;
+  @extend .short-alert-error;
+}
+
 .modal-label {
   margin: auto;
   text-align: left;
@@ -268,8 +279,8 @@ form {
 }
 
 .modal-message {
-  display:none;
   margin: auto;
+  margin-right: 8px;
   text-align: center;
   line-height: 30px;
 }
