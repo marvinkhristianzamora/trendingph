@@ -9,6 +9,7 @@ $ ()->
       $('#signin-modal').modal('hide')
       window.location.reload()
     else
+      $("#signin-btn").attr('value', 'Sign in')
       $("#signin-errors").text(data.error_message)
       $("#signin-errors").show()
 
