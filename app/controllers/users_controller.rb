@@ -10,8 +10,9 @@ class UsersController < ApplicationController
         sign_in @user
         flash[:success] = "Welcome to newmakersPH!"
         format.html { redirect_to root_path }
-        format.json { render json: @user, status: :created, location: @user }
+        format.json { render json: { success: true, user: @user }, status: :created, location: @user }
       else
+        format.json { render json: { success: false, errors: @user.errors } }
         format.html { render 'new' }
       end
     end

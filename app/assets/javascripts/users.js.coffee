@@ -21,9 +21,16 @@ $ ()->
 
 $ ()->
   $("form.new_user").on "ajax:success", (event, data, status, xhr) ->
-     $("form.new_user")[0].reset()
-     $('#signup-modal').modal('hide')
-     window.location.reload()
+    if(data.success)
+      $("form.new_user")[0].reset()
+      $('#signup-modal').modal('hide')
+      window.location.reload()
+    else
+      $('#signup-btn').attr('value', 'Sign up')
+      for key, value of data.errors
+        $("#signup-errors").append('<span>' + key.replace('_', ' ') + ' ' + value + '</span>')
+
+      $("#signup-errors").show()
 
 $ ()->
   $("form.new_user").on "ajax:beforeSend", (event, xhr, settings) ->
