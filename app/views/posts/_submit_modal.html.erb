@@ -6,6 +6,8 @@
         <h3 id="submit-modal-label" class="modal-label">New Post</h3>
       </div>
       <div class="modal-body">
+        <div id="submit-errors" class="modal-errors">
+        </div>
         <p>Enter a url of a news article, video, blog, gif, facebook post, or basically anything you want to trend.</p>
         <%= render 'posts/fields', f: f %>
       </div>

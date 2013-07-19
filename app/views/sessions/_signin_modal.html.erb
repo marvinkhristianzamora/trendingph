@@ -4,9 +4,9 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="signin-modal-label" class="modal-label">Sign in</h3>
-        <span id="signin-errors" class="modal-message short-alert short-alert-error"></span>
       </div>
       <div class="modal-body">
+        <div id="signin-errors" class="modal-errors"></div>
         <p>First things first.</p>
         <%= render 'sessions/fields', f: f %>
       </div>
