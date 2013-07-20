@@ -43,6 +43,10 @@
   min-width: 15px;
 }
 
+.anchor-fix {
+  min-width: 57px !important;
+}
+
 .anchor-button-medium {
   @extend .button-small;
   min-width: 75px;
