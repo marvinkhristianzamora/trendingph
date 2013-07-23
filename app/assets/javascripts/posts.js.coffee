@@ -12,6 +12,7 @@ jQuery ->
 
 $ ()->
   $("form.new_post").on "ajax:success", (event, data, status, xhr) ->
+    $("#submit-btn").attr('value', 'Submit')
     if data.success
       $("form.new_post")[0].reset()
       $('#submit-modal').modal('hide')
