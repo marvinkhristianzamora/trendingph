@@ -4,12 +4,12 @@
 
 $ ()->
   $("form.new_session").on "ajax:success", (event, data, status, xhr) ->
+    $("#signin-btn").attr('value', 'Sign in')
     if data.success
       $("form.new_session")[0].reset()
       $('#signin-modal').modal('hide')
       window.location.reload()
     else
-      $("#signin-btn").attr('value', 'Sign in')
       $("#signin-errors").append('<span>' + data.error_message + '</span>')
       $("#signin-errors").show()
 
@@ -21,6 +21,7 @@ $ ()->
 
 $ ()->
   $("form.new_user").on "ajax:success", (event, data, status, xhr) ->
+    $("#signup-btn").attr('value', 'Sign up')
     if(data.success)
       $("form.new_user")[0].reset()
       $('#signup-modal').modal('hide')
