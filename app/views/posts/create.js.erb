@@ -1,0 +1,4 @@
+$("#submit-btn").attr('value', 'Submit')
+$('#submit-modal').modal('hide')
+$('#flash-holder').attr('class', 'offset1 short-alert short-alert-success').text("Posted!").fadeIn(1000).fadeOut(3000)
+$("<%= escape_javascript(render(partial: 'post', locals: { post: @post })) %>").hide().prependTo('#posts').slideDown('slow')
