@@ -3,10 +3,11 @@ class Post < ActiveRecord::Base
 
   has_many :votes
 
+  before_validation :add_http
   after_create :add_author_vote
 
   validates :user_id, presence: true
-  validates :url, presence: true
+  validates :url, presence: true, url: true
   validates :title, presence: true
   GRAVITY = 1.5
 
@@ -33,6 +34,12 @@ class Post < ActiveRecord::Base
   end
 
   private
+    def add_http
+      if(!self.url.starts_with?("http"))
+        self.url.insert(0, "http://")
+      end
+    end
+
     def add_author_vote
       self.votes.create(user: self.user)
     end

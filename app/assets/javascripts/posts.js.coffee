@@ -12,13 +12,13 @@ jQuery ->
 
 $ ()->
   $("form.new_post").on "ajax:success", (event, data, status, xhr) ->
+    $("#submit-btn").attr('value', 'Submit')
     if data.success
       $("form.new_post")[0].reset()
       $('#submit-modal').modal('hide')
       $('#flash-holder').attr('class', 'offset1 short-alert short-alert-success').text("Posted!").fadeIn(1000).fadeOut(3000)
     else
       $('#submit-btn').attr('value', 'Submit')
-      console.log data.errors
       for key, value of data.errors
         $("#submit-errors").append('<span>' + key + ' ' + value + '</span>')
      

@@ -1,6 +1,6 @@
 <% if signed_in? %>
   <div id="submit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="submit-modal-label" aria-hidden="true">
-    <%= form_for(@post, remote: true, html: { "data-type" => :json }) do |f| %>
+    <%= form_for(@post, remote: true) do |f| %>
       <div class="modal-header">
         <a class="close" data-dismiss="modal" aria-hidden="true">×</a>
         <h3 id="submit-modal-label" class="modal-label">New Post</h3>
