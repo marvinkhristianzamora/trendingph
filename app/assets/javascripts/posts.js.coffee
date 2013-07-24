@@ -19,7 +19,6 @@ $ ()->
       $('#flash-holder').attr('class', 'offset1 short-alert short-alert-success').text("Posted!").fadeIn(1000).fadeOut(3000)
     else
       $('#submit-btn').attr('value', 'Submit')
-      console.log data.errors
       for key, value of data.errors
         $("#submit-errors").append('<span>' + key + ' ' + value + '</span>')
      
