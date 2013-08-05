@@ -7,8 +7,9 @@
       </div>
       <div class="modal-body">
         <div id="signin-errors" class="modal-errors"></div>
-        <p>First things first. No account? <a href="#signup-modal" role="button" data-dismiss="modal" data-toggle="modal">Sign up!</a></p>
+        <p>First things first. </p>
         <%= render 'sessions/fields', f: f %>
+        <small class="help-block">No account? <a href="#signup-modal" role="button" data-dismiss="modal" data-toggle="modal">Sign up!</a></small>
       </div>
       <div class="modal-footer">
         <a class="anchor-button-medium anchor-fix concrete rounded1" data-dismiss="modal" aria-hidden="true">Close</a>
