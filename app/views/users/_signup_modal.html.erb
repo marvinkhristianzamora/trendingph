@@ -1,6 +1,6 @@
 <% if !signed_in? %>
   <div id="signup-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signup-modal-label" aria-hidden="true">
-    <%= form_for(@user, remote: true, html: { "data-type" => :json }) do |f| %>
+    <%= form_for(@user, remote: true) do |f| %>
       <div class="modal-header">
         <a class="close" data-dismiss="modal" aria-hidden="true">×</a>
         <h3 id="signup-modal-label" class="modal-label">Sign up</h3>
