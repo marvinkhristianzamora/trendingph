@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
         end
 
         format.json { render json: { success: true }, status: :created, location: user }
+        format.js
       else
         format.json { render json: { success: false, error_message: "Invalid email/password combo!" },
           status: :created, location: user }
